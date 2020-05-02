@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block header %}
+<h1>{% block title %}Log In{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>E-Library Account</h1>
+    <p class="lead">Welcome to the online Library</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            This web application will help you borrow the books of your choice.
+
+        </p>
+        <p><a class="btn btn-default" href="https://www.goodreads.com/">For Book reviews, Click Here  &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>For Free Books</h2>
+        <p>
+            You can also download the books for free in Archive.org.
+        </p>
+        <p><a class="btn btn-default" href="https://archive.org/details/texts">Learn more &raquo;</a></p>
+    </div>
+
+
+</div>
+<form method="post" action="/user_profile">
+    <div class="form-group center">
+        <br>
+        <br>
+        <br>
+        <label for="username">Username</label>
+        <input name="username" class="form-control" id="username" required>
+        <br>
+
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" id="password" required>
+        <br>
+        <input class="form-control btn-primary " onclick="logincheck()" type="submit" value="Log In">
+    </div>
+
+</form>
+
+<script>
+    var username = $("username").val()
+    var password = $("password").val()
+
+    if (username != "khushi" && password != "12345") {
+        alert("Incorrect Username of Password")
+    }
+</script>
+{% endblock %}
